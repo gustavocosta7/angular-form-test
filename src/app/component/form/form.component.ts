@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms'
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -8,18 +8,13 @@ import {FormBuilder, FormGroup} from '@angular/forms'
 })
 export class FormComponent implements OnInit {
 
-  items;
-  checkoutForm: FormGroup;
+  name = new FormControl('Nome padrão'); 
 
-  constructor(private formBuilder: FormBuilder) {
-    this.checkoutForm = this.formBuilder.group({
-      name: '',
-      address: '',
-    })
+  constructor() {
+
    }
 
   ngOnInit(): void {
-    this.items = ''
   }
 
   onSubmit() {

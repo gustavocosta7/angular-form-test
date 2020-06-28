@@ -6,7 +6,7 @@
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" formControlName="nameProfile" class="form-control" id="name" placeholder="Enter name">
+              <input type="text" formControlName="nameProfile" class="form-control" id="name" placeholder="Enter name" required>
             </div>
 
             <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
@@ -14,4 +14,10 @@
     </div>
 
     <div class="col-md-4"></div>
+</div>
+
+<div class="row">
+  <p>
+    Form Status: {{ profileForm.status }}
+  </p>
 </div>

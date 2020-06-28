@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -8,21 +9,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  profileForm = new FormGroup({
-    nameProfile: new FormControl('Teste')
-  });
+  profileForm = this.fb.group({
+    nameProfile: ['Nome de perfil', Validators.required]
+  })
 
-  constructor() {
+  // profileForm = new FormGroup({
+  //   nameProfile: new FormControl('Teste')
+  // });
 
+  constructor(private fb: FormBuilder) {
    }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.warn(this.profileForm.value);
-    console.log('submit');
-    
+
   }
 
 }

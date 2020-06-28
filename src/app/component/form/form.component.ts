@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -8,7 +8,9 @@ import {FormControl} from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  name = new FormControl('Nome padrão'); 
+  profileForm = new FormGroup({
+    nameProfile: new FormControl('Teste')
+  });
 
   constructor() {
 
@@ -18,7 +20,8 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn('submit datas');
+    console.warn(this.profileForm.value);
+    console.log('submit');
     
   }
 
